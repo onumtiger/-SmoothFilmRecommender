@@ -1,0 +1,7 @@
+boto3==1.9.216
+ask-sdk-core==1.11.0
+firebase_admin==4.5.0
+tmdbv3api==1.7.4
+requests==2.25.1
+pandas==1.2.1
+nltk==3.5

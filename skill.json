@@ -1,0 +1,70 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "An intelligent recommender which helps you find the perfect movie to watch.",
+          "examplePhrases": [
+            "Alexa tell movie tips to give me a recommendation",
+            "Alexa tell movie tips to change my profile",
+            "Alexa tell movie tips help"
+          ],
+          "keywords": [],
+          "name": "Smooth Film Recommender",
+          "description": "After setting up your profile the smooth film recommender will help you find a good movie.\n\nSay \"Alexa open movie tips\" to invoke the skill.\nAfterwards you can ask for:\n- a recommendation: \"recommend me something\"\n- a recommendation based on your favourite actress or genre: \"recommend me a movie based on Chadwick Boseman\"\n- a rewatch \"give me a rewatch\"",
+          "smallIconUri": "file://assets/images/en-US_smallIconUri.png",
+          "largeIconUri": "file://assets/images/en-US_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "isAvailableWorldwide": false,
+      "testingInstructions": "Just invoke the skill via \"alexa open movie tips\" and ask for a recommendation e.g. \"recommend me something\"",
+      "category": "TV_GUIDES",
+      "distributionMode": "PUBLIC",
+      "distributionCountries": [
+        "DE"
+      ]
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:436202637407:function:b6a717a2-1a79-44e5-b05e-6ff236467ffa:Release_0"
+        },
+        "interfaces": [],
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:436202637407:function:b6a717a2-1a79-44e5-b05e-6ff236467ffa:Release_0"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:436202637407:function:b6a717a2-1a79-44e5-b05e-6ff236467ffa:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:436202637407:function:b6a717a2-1a79-44e5-b05e-6ff236467ffa:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-US": {
+          "termsOfUseUrl": "https://drive.google.com/file/d/1kOkC383Q51f_jJ7rMwDCxeRX5aBpTMbf/view",
+          "privacyPolicyUrl": "https://drive.google.com/file/d/1ZOnyzfxh6zTBqK_gFy-hw-IXr-vBbfvX/view"
+        }
+      },
+      "containsAds": false,
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "usesPersonalInfo": true
+    }
+  }
+}

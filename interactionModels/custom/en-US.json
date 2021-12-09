@@ -1,0 +1,1328 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "movie tips",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "Help",
+            "How do I get a recommendation",
+            "How do I get a suggestion",
+            "What can I do",
+            "Tell me my options"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "feedbackIntent",
+          "slots": [
+            {
+              "name": "feedbackGeneral",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{feedbackGeneral}",
+                "I\u0027d say it was {feedbackGeneral}",
+                "It was {feedbackGeneral}"
+              ]
+            },
+            {
+              "name": "feedbackAspects",
+              "type": "movieAspects",
+              "samples": [
+                "I didn\u0027t care for the {feedbackAspects}",
+                "I really liked the {feedbackAspects}",
+                "I thought the {feedbackAspects} was great",
+                "The {feedbackAspects} was good",
+                "Mainly the {feedbackAspects}",
+                "I didn\u0027t like the {feedbackAspects}",
+                "I liked the {feedbackAspects}",
+                "{feedbackAspects}",
+                "the {feedbackAspects}"
+              ],
+              "multipleValues": {
+                "enabled": true
+              }
+            }
+          ],
+          "samples": [
+            "I have finished watching the movie",
+            "I finished watching the movie",
+            "I finished watching the film",
+            "Let me rate the film",
+            "I want to rate the film",
+            "The film was {feedbackGeneral}",
+            "That movie was {feedbackGeneral}",
+            "This movie was {feedbackGeneral}",
+            "I have finished watching the film",
+            "I finished the film",
+            "Let me give feedback",
+            "Feedback",
+            "Let me rate the movie",
+            "I want to rate the movie",
+            "The movie is over",
+            "I finished the movie",
+            "I have finished watching"
+          ]
+        },
+        {
+          "name": "setupIntent",
+          "slots": [
+            {
+              "name": "name",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "{name}",
+                "Set my name to {name}",
+                "Call me {name}",
+                "My name is {name}"
+              ]
+            },
+            {
+              "name": "streamer",
+              "type": "streamingService",
+              "samples": [
+                "I meant {streamer}",
+                "I mean {streamer}",
+                "I have a {streamer} subscription",
+                "I am subscribed to {streamer}",
+                "Only {streamer}",
+                "I have {streamer}",
+                "{streamer}"
+              ],
+              "multipleValues": {
+                "enabled": true
+              }
+            },
+            {
+              "name": "favMovie",
+              "type": "AMAZON.Movie",
+              "samples": [
+                "Change my favorite movie to {favMovie}",
+                "Set my favorite movie to {favMovie}",
+                "It\u0027s {favMovie}",
+                "{favMovie}",
+                "My favorite movie is {favMovie}"
+              ]
+            },
+            {
+              "name": "favActor",
+              "type": "AMAZON.Actor",
+              "samples": [
+                "My favorite is {favActor}",
+                "{favActor} is my favorite actress",
+                "{favActor} is my favorite actor",
+                "{favActor} is my favorite",
+                "My favorite actress is {favActor}",
+                "My favorite actor is {favActor}",
+                "Change my favorite actress to {favActor}",
+                "Change my favorite actor to {favActor}",
+                "Set my favorite actress to {favActor}",
+                "Set my favorite actor to {favActor}",
+                "It\u0027s {favActor}",
+                "{favActor}"
+              ]
+            },
+            {
+              "name": "favGenre",
+              "type": "genre",
+              "samples": [
+                "{favGenre} ones",
+                "Set my favorite genre to {favGenre}",
+                "{favGenre} movies",
+                "{favGenre} films",
+                "I like {favGenre} the most",
+                "{favGenre}",
+                "It\u0027s {favGenre}",
+                "My favorite genre is {favGenre}"
+              ]
+            },
+            {
+              "name": "dislikedGenre",
+              "type": "genre",
+              "samples": [
+                "{dislikedGenre} films",
+                "{dislikedGenre} movies",
+                "Set my disliked genre to {dislikedGenre}",
+                "I hate {dislikedGenre} movies",
+                "I hate {dislikedGenre}",
+                "I don\u0027t like {dislikedGenre} movies",
+                "I don\u0027t like {dislikedGenre} films",
+                "I hate {dislikedGenre} films",
+                "I don\u0027t like {dislikedGenre}",
+                "It\u0027s {dislikedGenre}",
+                "Yes {dislikedGenre}",
+                "Please don\u0027t recommend {dislikedGenre} films to me"
+              ]
+            },
+            {
+              "name": "finalConfirmation",
+              "type": "setupConfirmation",
+              "samples": [
+                "{finalConfirmation}"
+              ]
+            }
+          ],
+          "samples": [
+            "I want to change my profile",
+            "Reset my profile",
+            "I want to reset my profile",
+            "Let me create my profile",
+            "I want to create my profile",
+            "Let me setup my profile",
+            "Setup"
+          ]
+        },
+        {
+          "name": "recommendationIntent",
+          "slots": [
+            {
+              "name": "recommendationOK",
+              "type": "recommendationConfirmation",
+              "samples": [
+                "{recommendationOK}"
+              ]
+            }
+          ],
+          "samples": [
+            "What to watch",
+            "What should I watch",
+            "What film should I watch",
+            "What movie should I watch",
+            "I want a recommendation",
+            "Give me a recommendation",
+            "Give me a film to watch",
+            "Give me a movie to watch",
+            "Tell me a movie to watch",
+            "Tell me a film to watch",
+            "Tell me something to watch",
+            "I want to watch a movie",
+            "I want to watch a film",
+            "I want to watch something",
+            "Give me a movie",
+            "Give me a film",
+            "Recommend something",
+            "Recommend a film",
+            "Recommend a movie to me",
+            "Recommend a film to me",
+            "Recommend a movie"
+          ]
+        },
+        {
+          "name": "recommendationIntent_rewatch",
+          "slots": [
+            {
+              "name": "recommendationOK",
+              "type": "recommendationConfirmation",
+              "samples": [
+                "{recommendationOK}"
+              ]
+            }
+          ],
+          "samples": [
+            "Recommend a rewatch",
+            "Recommend a film that I liked",
+            "Suggest a film that I liked",
+            "Suggest a movie that I liked",
+            "Suggest a movie to rewatch",
+            "Suggest a film to rewatch",
+            "Suggest something to rewatch",
+            "Suggest a rewatch",
+            "Recommend something to rewatch",
+            "Recommend a movie that I liked",
+            "Give me something to rewatch",
+            "I want to rewatch a good movie",
+            "I want to rewatch something",
+            "I want to rewatch a movie",
+            "Recommend a rewatch to me"
+          ]
+        },
+        {
+          "name": "recommendationIntent_byMovie",
+          "slots": [
+            {
+              "name": "movieTitle",
+              "type": "AMAZON.Movie",
+              "samples": [
+                "{movieTitle}"
+              ]
+            },
+            {
+              "name": "recommendationOK",
+              "type": "recommendationConfirmation",
+              "samples": [
+                "{recommendationOK}"
+              ]
+            }
+          ],
+          "samples": [
+            "Recommend something like {movieTitle}",
+            "Recommend something similar to {movieTitle}",
+            "Suggest something like {movieTitle}",
+            "Recommend someting like {movieTitle}",
+            "Suggest a film similar to {movieTitle}",
+            "Suggest a movie similar to {movieTitle}",
+            "Suggest a movie like {movieTitle}",
+            "Suggest a film like {movieTitle}",
+            "Recommend a movie similar to {movieTitle}",
+            "Recommend a movie like {movieTitle}",
+            "I want to watch a movie similar to {movieTitle}",
+            "I want to watch a film similar to {movieTitle}",
+            "I want to watch a movie like {movieTitle}",
+            "I want to watch a film like {movieTitle}",
+            "Give me a movie similar to {movieTitle}",
+            "Give me a movie like {movieTitle}",
+            "I want to watch something similar to {movieTitle}",
+            "I want to watch something like {movieTitle}",
+            "Give me a film similar to {movieTitle}",
+            "Give me a film like {movieTitle}",
+            "Recommend a film like  {movieTitle}",
+            "Recommend a film similar to {movieTitle}"
+          ]
+        },
+        {
+          "name": "recommendationIntent_byGenre",
+          "slots": [
+            {
+              "name": "genre",
+              "type": "genre",
+              "samples": [
+                "{genre}"
+              ]
+            },
+            {
+              "name": "recommendationOK",
+              "type": "recommendationConfirmation",
+              "samples": [
+                "{recommendationOK}"
+              ]
+            }
+          ],
+          "samples": [
+            "Recommend a {genre} movie",
+            "Recommend a movie from the {genre} genre",
+            "Recommend a movie from {genre}",
+            "Recommend a film from {genre}",
+            "Give me a film from {genre}",
+            "Give me a movie from {genre}",
+            "I want to watch something from {genre}",
+            "I want to watch a movie fom {genre}",
+            "I want to watch a film from {genre}",
+            "I want to watch a movie from the {genre} genre",
+            "I want to watch a film from the {genre} genre",
+            "I want to watch a {genre} movie",
+            "I want to watch a {genre} film",
+            "Give me a movie from the {genre} genre",
+            "Give me a {genre} movie",
+            "I want to watch something {genre}",
+            "I want to watch something from the {genre} genre",
+            "Give me a film from the {genre} genre",
+            "Give me a {genre} film",
+            "Recommend a film from the {genre} genre",
+            "Recommend a {genre} film"
+          ]
+        },
+        {
+          "name": "recommendationIntent_byActor",
+          "slots": [
+            {
+              "name": "actor",
+              "type": "AMAZON.Actor",
+              "samples": [
+                "{actor}"
+              ]
+            },
+            {
+              "name": "recommendationOK",
+              "type": "recommendationConfirmation",
+              "samples": [
+                "{recommendationOK}"
+              ]
+            }
+          ],
+          "samples": [
+            "Recommend something starring {actor}",
+            "Recommend something with {actor}",
+            "Suggest something starring {actor}",
+            "Suggest something with {actor}",
+            "Suggest a film starring {actor}",
+            "Suggest a movie starring {actor}",
+            "Suggest a film with {actor}",
+            "Suggest a movie with {actor}",
+            "Recommend a movie starring {actor}",
+            "Recommend a movie with {actor}",
+            "I want to watch a film starring {actor}",
+            "I want to watch a movie starring {actor}",
+            "I want to watch a movie with {actor}",
+            "I want to watch a film with {actor}",
+            "Give me a movie with {actor}",
+            "Give me a movie starring {actor}",
+            "I want to watch something with {actor}",
+            "I want to watch something starring {actor}",
+            "Give me a film with {actor}",
+            "Give me a film starring {actor}",
+            "Recommend a film with {actor}",
+            "Recommend a film starring {actor}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "movie",
+                "synonyms": [
+                  "setting",
+                  "all of them",
+                  "characters",
+                  "everything about it",
+                  "all of it",
+                  "everything"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "genre",
+                "synonyms": [
+                  "story",
+                  "plot"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "acting",
+                "synonyms": [
+                  "lead actresses",
+                  "lead actress",
+                  "lead actor",
+                  "lead actors",
+                  "leads",
+                  "actors",
+                  "actor",
+                  "cast",
+                  "actresses",
+                  "actress"
+                ]
+              }
+            }
+          ],
+          "name": "movieAspects"
+        },
+        {
+          "values": [
+            {
+              "id": "ENT",
+              "name": {
+                "value": "EntertainTV",
+                "synonyms": [
+                  "Telecom",
+                  "Telekom",
+                  "Magenta T. V.",
+                  "Magenta TV",
+                  "Magenta",
+                  "MagentaTV",
+                  "Entertain T. V.",
+                  "Entertain TV",
+                  "Entertain"
+                ]
+              }
+            },
+            {
+              "id": "SKY-G",
+              "name": {
+                "value": "Sky Go",
+                "synonyms": [
+                  "Go"
+                ]
+              }
+            },
+            {
+              "id": "SKY-X",
+              "name": {
+                "value": "Sky"
+              }
+            },
+            {
+              "id": "SKY-S",
+              "name": {
+                "value": "Sky Store"
+              }
+            },
+            {
+              "id": "ATV-X",
+              "name": {
+                "value": "Apple"
+              }
+            },
+            {
+              "id": "ATV-P",
+              "name": {
+                "value": "Apple TV Plus",
+                "synonyms": [
+                  "TV Plus"
+                ]
+              }
+            },
+            {
+              "id": "SKY-T",
+              "name": {
+                "value": "Sky Ticket",
+                "synonyms": [
+                  "Ticket",
+                  "Sky Cinema Ticket",
+                  "Sky Ticket Cinema"
+                ]
+              }
+            },
+            {
+              "id": "AMZ-X",
+              "name": {
+                "value": "Amazon"
+              }
+            },
+            {
+              "id": "MSF",
+              "name": {
+                "value": "Microsoft Store",
+                "synonyms": [
+                  "Microsoft"
+                ]
+              }
+            },
+            {
+              "id": "GPM",
+              "name": {
+                "value": "Google Play Movies",
+                "synonyms": [
+                  "Google Play",
+                  "Play",
+                  "Google"
+                ]
+              }
+            },
+            {
+              "id": "ATV-I",
+              "name": {
+                "value": "Apple iTunes",
+                "synonyms": [
+                  "Apple TV",
+                  "Apple T. V.",
+                  "iTunes store",
+                  "iTunes"
+                ]
+              }
+            },
+            {
+              "id": "DIS",
+              "name": {
+                "value": "Disney Plus",
+                "synonyms": [
+                  "Disney"
+                ]
+              }
+            },
+            {
+              "id": "AMZ-V",
+              "name": {
+                "value": "Amazon Video",
+                "synonyms": [
+                  "Video",
+                  "Amazon Store"
+                ]
+              }
+            },
+            {
+              "id": "AMZ-P",
+              "name": {
+                "value": "Amazon Prime Video",
+                "synonyms": [
+                  "Prime Video",
+                  "Prime"
+                ]
+              }
+            },
+            {
+              "id": "NFX",
+              "name": {
+                "value": "Netflix"
+              }
+            }
+          ],
+          "name": "streamingService"
+        },
+        {
+          "values": [
+            {
+              "id": "FAV",
+              "name": {
+                "value": "my favorite genre",
+                "synonyms": [
+                  "my preferred genre"
+                ]
+              }
+            },
+            {
+              "id": "37",
+              "name": {
+                "value": "Western"
+              }
+            },
+            {
+              "id": "10752",
+              "name": {
+                "value": "War"
+              }
+            },
+            {
+              "id": "53",
+              "name": {
+                "value": "Thriller",
+                "synonyms": [
+                  "suspense",
+                  "suspenseful"
+                ]
+              }
+            },
+            {
+              "id": "10770",
+              "name": {
+                "value": "TV Movie",
+                "synonyms": [
+                  "made for T. V.",
+                  "made for TV",
+                  "T. V.",
+                  "TV"
+                ]
+              }
+            },
+            {
+              "id": "878",
+              "name": {
+                "value": "Science Fiction",
+                "synonyms": [
+                  "syfy",
+                  "sci fi",
+                  "sci-fi"
+                ]
+              }
+            },
+            {
+              "id": "10749",
+              "name": {
+                "value": "Romance",
+                "synonyms": [
+                  "romantic"
+                ]
+              }
+            },
+            {
+              "id": "9648",
+              "name": {
+                "value": "Mystery"
+              }
+            },
+            {
+              "id": "10402",
+              "name": {
+                "value": "Music"
+              }
+            },
+            {
+              "id": "27",
+              "name": {
+                "value": "Horror",
+                "synonyms": [
+                  "scary"
+                ]
+              }
+            },
+            {
+              "id": "36",
+              "name": {
+                "value": "History"
+              }
+            },
+            {
+              "id": "14",
+              "name": {
+                "value": "Fantasy"
+              }
+            },
+            {
+              "id": "10751",
+              "name": {
+                "value": "Family"
+              }
+            },
+            {
+              "id": "18",
+              "name": {
+                "value": "Drama"
+              }
+            },
+            {
+              "id": "99",
+              "name": {
+                "value": "Documentary",
+                "synonyms": [
+                  "Doku",
+                  "Docu"
+                ]
+              }
+            },
+            {
+              "id": "80",
+              "name": {
+                "value": "Crime"
+              }
+            },
+            {
+              "id": "35",
+              "name": {
+                "value": "Comedy",
+                "synonyms": [
+                  "Comedic",
+                  "Fun",
+                  "Funny"
+                ]
+              }
+            },
+            {
+              "id": "16",
+              "name": {
+                "value": "Animation",
+                "synonyms": [
+                  "computer animation",
+                  "computer animated",
+                  "Toon",
+                  "Cartoon",
+                  "Anime",
+                  "Animated"
+                ]
+              }
+            },
+            {
+              "id": "12",
+              "name": {
+                "value": "Adventure"
+              }
+            },
+            {
+              "id": "28",
+              "name": {
+                "value": "Action"
+              }
+            }
+          ],
+          "name": "genre"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Stop",
+                "synonyms": [
+                  "Cancel",
+                  "Abort",
+                  "Don\u0027t",
+                  "No"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Okay",
+                "synonyms": [
+                  "Yes please",
+                  "Do that",
+                  "Let\u0027s do that",
+                  "Sounds good",
+                  "Okay then",
+                  "Yes",
+                  "OK"
+                ]
+              }
+            }
+          ],
+          "name": "setupConfirmation"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Something else",
+                "synonyms": [
+                  "No",
+                  "I don\u0027t want to watch it",
+                  "I don\u0027t want to watch that one",
+                  "I don\u0027t like that one",
+                  "Not that one",
+                  "Something else please",
+                  "Give me something else please",
+                  "Give me another one",
+                  "Another movie please",
+                  "Give me a different film",
+                  "Give me a different movie",
+                  "Another film please",
+                  "Another one",
+                  "I want to watch something else",
+                  "I want to see something else"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Stop",
+                "synonyms": [
+                  "Cancel",
+                  "Abort"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Okay",
+                "synonyms": [
+                  "I want to see it",
+                  "I want to watch it",
+                  "I want to see that",
+                  "Let me see that",
+                  "Let me watch that",
+                  "Yes please",
+                  "I will watch it",
+                  "I want to watch that",
+                  "Do that",
+                  "Let\u0027s do that",
+                  "Sounds good",
+                  "Okay then",
+                  "Yes",
+                  "OK"
+                ]
+              }
+            }
+          ],
+          "name": "recommendationConfirmation"
+        },
+        {
+          "values": [
+            {
+              "id": "FAV",
+              "name": {
+                "value": "my favorite movie",
+                "synonyms": [
+                  "my favorite film",
+                  "my favorite one",
+                  "my favorite"
+                ]
+              }
+            }
+          ],
+          "name": "AMAZON.Movie"
+        },
+        {
+          "values": [
+            {
+              "id": "FAV",
+              "name": {
+                "value": "my favorite actor",
+                "synonyms": [
+                  "my favorite actress"
+                ]
+              }
+            }
+          ],
+          "name": "AMAZON.Actor"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "feedbackIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "feedbackGeneral",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1353456729974.517362488450"
+              }
+            },
+            {
+              "name": "feedbackAspects",
+              "type": "movieAspects",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1353456729974.456147435043"
+              }
+            }
+          ],
+          "delegationStrategy": "SKILL_RESPONSE"
+        },
+        {
+          "name": "setupIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "name",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.385483982847.122103223565"
+              }
+            },
+            {
+              "name": "streamer",
+              "type": "streamingService",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.385483982847.1323501482042"
+              }
+            },
+            {
+              "name": "favMovie",
+              "type": "AMAZON.Movie",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.385483982847.980020450742"
+              }
+            },
+            {
+              "name": "favActor",
+              "type": "AMAZON.Actor",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.385483982847.509188716637"
+              }
+            },
+            {
+              "name": "favGenre",
+              "type": "genre",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.385483982847.61878847474"
+              }
+            },
+            {
+              "name": "dislikedGenre",
+              "type": "genre",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.385483982847.1492172067149"
+              }
+            },
+            {
+              "name": "finalConfirmation",
+              "type": "setupConfirmation",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.800738092125.352736637710"
+              }
+            }
+          ],
+          "delegationStrategy": "SKILL_RESPONSE"
+        },
+        {
+          "name": "recommendationIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "recommendationOK",
+              "type": "recommendationConfirmation",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1262480138656.598087105480"
+              }
+            }
+          ],
+          "delegationStrategy": "SKILL_RESPONSE"
+        },
+        {
+          "name": "recommendationIntent_rewatch",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "recommendationOK",
+              "type": "recommendationConfirmation",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.846467779157.485173160170"
+              }
+            }
+          ],
+          "delegationStrategy": "SKILL_RESPONSE"
+        },
+        {
+          "name": "recommendationIntent_byMovie",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "movieTitle",
+              "type": "AMAZON.Movie",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1565383972229.1472997135562"
+              }
+            },
+            {
+              "name": "recommendationOK",
+              "type": "recommendationConfirmation",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1565383972229.1076118734748"
+              }
+            }
+          ],
+          "delegationStrategy": "SKILL_RESPONSE"
+        },
+        {
+          "name": "recommendationIntent_byGenre",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "genre",
+              "type": "genre",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.653468184399.498211152764"
+              }
+            },
+            {
+              "name": "recommendationOK",
+              "type": "recommendationConfirmation",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.653468184399.117350500425"
+              }
+            }
+          ],
+          "delegationStrategy": "SKILL_RESPONSE"
+        },
+        {
+          "name": "recommendationIntent_byActor",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "actor",
+              "type": "AMAZON.Actor",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.849166432375.1379219448952"
+              }
+            },
+            {
+              "name": "recommendationOK",
+              "type": "recommendationConfirmation",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.849166432375.1052109215492"
+              }
+            }
+          ],
+          "delegationStrategy": "SKILL_RESPONSE"
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1353456729974.517362488450",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What did you think about the film?"
+          },
+          {
+            "type": "PlainText",
+            "value": "How did you like my last recommendation?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What did you think about my last recommendation?"
+          },
+          {
+            "type": "PlainText",
+            "value": "How did you like the movie?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1353456729974.456147435043",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Tell me what stood out about the film in your opinion. That could be the acting, the story, or the setting of the movie."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.385483982847.122103223565",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please tell me your name."
+          },
+          {
+            "type": "PlainText",
+            "value": "What\u0027s your name?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What do you want me to call you?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.385483982847.980020450742",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is your favorite movie?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Please tell me your favorite movie."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.385483982847.509188716637",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Who is your favorite actor or actress?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Please tell me your favorite actor or actress."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.385483982847.61878847474",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which genre of films do you like the most?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Please tell me your favorite genre."
+          },
+          {
+            "type": "PlainText",
+            "value": "What\u0027s your favorite genre?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What is your favorite film genre?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.385483982847.1492172067149",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Is there a genre that you don\u0027t want me to recommend to you?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Now please tell me a genre that you do not like."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.385483982847.1323501482042",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which streaming services do you have subscriptions for?"
+          },
+          {
+            "type": "PlainText",
+            "value": "On which streaming services do you want me to look for recommendations?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Which streaming platforms do you use?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.800738092125.352736637710",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I will now save your profile to my database. Please say Okay to confirm or Stop to cancel."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1262480138656.598087105480",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "You can say Okay to accept this recommendation or request another one by saying Another one."
+          },
+          {
+            "type": "PlainText",
+            "value": "Does that sound good?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Do you want to watch it?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.846467779157.485173160170",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please say Okay to accept this recommendation or request another one by saying Another one."
+          },
+          {
+            "type": "PlainText",
+            "value": "Does that sound good?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Do you want to watch it?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1565383972229.1076118734748",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please say Okay to accept this recommendation or request another one by saying Another one."
+          },
+          {
+            "type": "PlainText",
+            "value": "Does that sound good?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Do you want to watch it?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1565383972229.1472997135562",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which movie do you want your recommendation to be similar to?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.653468184399.498211152764",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "From which genre do you want to be your recommendation to be?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.653468184399.117350500425",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please say Okay to accept this recommendation or request another one by saying Another one."
+          },
+          {
+            "type": "PlainText",
+            "value": "Does that sound good?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Do you want to watch it?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.849166432375.1379219448952",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which actor or actress do you want me to look for?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.849166432375.1052109215492",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please say Okay to accept this recommendation or request another one by saying Another one."
+          },
+          {
+            "type": "PlainText",
+            "value": "Does that sound good?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Do you want to watch it?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "49"
+}
